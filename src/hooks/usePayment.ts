@@ -4,7 +4,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { IntegrationPlatformClient } from "../cient/IntegrationPlatformClient";
+import { IntegrationPlatformClient } from "../client/IntegrationPlatformClient";
 import {
 	CallbackHandlerOptions,
 	PaymentError,
