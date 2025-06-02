@@ -1,0 +1,66 @@
+/**
+ * Loading Spinner Styles
+ * Smooth animated spinner with multiple sizes
+ */
+
+.loading-spinner {
+  display: inline-block;
+  color: var(--payment-modal-primary-color, #3b82f6);
+}
+
+.loading-spinner--small {
+  width: 16px;
+  height: 16px;
+}
+
+.loading-spinner--medium {
+  width: 24px;
+  height: 24px;
+}
+
+.loading-spinner--large {
+  width: 48px;
+  height: 48px;
+}
+
+.loading-spinner__svg {
+  animation: loading-spinner-rotate 1s linear infinite;
+}
+
+.loading-spinner__circle {
+  animation: loading-spinner-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes loading-spinner-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading-spinner-dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner__svg {
+    animation: none;
+  }
+  
+  .loading-spinner__circle {
+    animation: none;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+}
